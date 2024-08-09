@@ -1,38 +1,168 @@
-.App {
+:root {
+  --pastel-pink: #f8cfcf;
+  --pastel-blue: #a2c2e8;
+  --pastel-green: #b9e3a4;
+  --pastel-yellow: #f9f8a3;
+  --pastel-purple: #e3d5e8;
+
+  --light-blue: #a8dadc;
+  --medium-blue: #457b9d;
+  --dark-blue: #1d3557;
+  --sky-blue: #f1faee;
+  --ocean-blue: #4a90e2;
+
+  --soft-tan: #f2d6c4;
+  --burnt-orange: #e06f20;
+  --deep-brown: #5d3a2c;
+  --warm-beige: #f8e7d2;
+  --rust-red: #b7410e;
+
+  --neon-green: #39ff14;
+  --neon-pink: #fe019a;
+  --neon-blue: #1f51ff;
+  --neon-yellow: #f7ff00;
+  --neon-orange: #ff5f00;
+
+  --light-gray: #f5f5f5;
+  --medium-gray: #cccccc;
+  --dark-gray: #333333;
+  --charcoal: #444444;
+  --slate: #6c757d;
+
+  --forest-green: #2d6a4f;
+  --sky-blue: #b5d9e6;
+  --sunset-orange: #f4a261;
+  --dirt-brown: #6b4f4f;
+  --leaf-green: #7d9a5e;
+
+  --seafoam-green: #9be2e8;
+  --coral: #ff6b6b;
+  --sand-beige: #f2d2ae;
+  --sea-blue: #2e86ab;
+  --shell-white: #fefefe;
+
+  --neon-purple: #a54cde;
+  --electric-blue: #0074d9;
+  --hot-pink: #ff007f;
+  --cyber-yellow: #f1c40f;
+  --deep-violet: #3c1c6c;
+
+  --background-gradient: linear-gradient(to right, var(--light-blue), var(--light-gray));
+  --input-focus: #e0f7fa;
+}
+/* General Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  background: var(--background-gradient);
+  color: var(--dark-gray);
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Styling */
+header {
+  background-color: var(--medium-blue);
+  color: var(--sky-blue);
+  padding: 1rem;
   text-align: center;
+  border-bottom: 5px solid var(--ocean-blue);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Button Styling */
+button {
+  background-color: var(--pastel-yellow);
+  color: var(--dark-blue);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+button:hover {
+  background-color: var(--pastel-green);
+  transform: scale(1.05);
+}
+
+.task-button {
+  background-color: var(--pastel-yellow);
+}
+
+.delete-button {
+  background-color: var(--rust-red);
+}
+
+.delete-button:hover {
+  background-color: var(--burnt-orange);
+}
+
+/* Input Styling */
+.task-input-container {
+  margin: 1rem;
   display: flex;
-  flex-direction: column;
+  gap: 1rem;
+}
+
+.task-input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid var(--medium-gray);
+  border-radius: 5px;
+  flex: 1;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.task-input:focus {
+  border-color: var(--input-focus);
+  box-shadow: 0 0 5px var(--input-focus);
+}
+
+/* Task List Styling */
+.task-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 1rem;
+}
+
+.task-item {
+  background-color: var(--pastel-blue);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  transition: background-color 0.3s ease, transform 0.2s;
 }
 
-.App-link {
-  color: #61dafb;
+.task-item:hover {
+  background-color: var(--light-blue);
+  transform: scale(1.02);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.task-name {
+  cursor: pointer;
+}
+
+.task-name:hover {
+  color: var(--ocean-blue);
+}
+
+/* Footer Styling */
+footer {
+  background-color: var(--medium-blue);
+  color: var(--sky-blue);
+  text-align: center;
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  border-top: 5px solid var(--ocean-blue);
 }
