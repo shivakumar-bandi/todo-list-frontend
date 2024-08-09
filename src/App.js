@@ -17,7 +17,9 @@ function App() {
     const fetchTasks = async () => {
       try {
         const response = await axios.get(API_URL);
-        setTasks(response.data);
+        console.log(response.data); // Log the response to check if it's an array
+        const fetchedTasks = Array.isArray(response.data) ? response.data : [];
+        setTasks(fetchedTasks);
         setIsLoading(false);
       } catch (error) {
         console.error("Error fetching tasks:", error);
@@ -43,7 +45,6 @@ function App() {
     }
   };
   
-
   const handleDeleteTask = async (id) => {
     console.log(`Attempting to delete task with ID: ${id}`);
     try {
@@ -55,7 +56,6 @@ function App() {
     }
   };
   
-
   const handleToggleCompletion = async (id, completed) => {
     try {
       const response = await axios.put(`${API_URL}/${id}`, { completed: !completed });
